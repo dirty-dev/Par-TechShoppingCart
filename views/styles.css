@@ -28,34 +28,25 @@ body{
 .product_list > div {
 	background-color: #D9D9D9;
 	border: 2px solid #000000;
-	width: 45%;
+	width: 300px;
 	/*height:200px;*/
 	margin: 1%;
 	font-size: 1.5em;
 }
 
+
 .cart_list {
 	display: flex;
 	flex-direction: column;
-	width: 30%;
+	width: 40%;
 	margin:2vh;
-	height: 94vh;
+	height: 90vh;
 	position: fixed;
 	right:5%;
 	background-color: #EBF1DE;
 	border: 2px solid #2FBD6C;
 }
 
-/*
-.cart_list > div {
-	background-color: #D9D9D9;
-	border: 2px solid #000000;
-	width: 95%;
-	margin: 1%;
-	font-size: 1.5em;
-	align:center;
-}
-*/
 .cartTop {
 	display:flex;
 	flex-direction: column;
