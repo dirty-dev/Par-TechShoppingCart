@@ -1,0 +1,34 @@
+html
+	head
+		style
+			include styles.css
+		script
+			include clientSideScripts.js
+	body
+		
+		div.row
+			div.products
+				a.btn(href='http://10.0.0.178:3000' draggable="false") Retrieve New Inventory
+				div.product_list(id="productList")
+					
+					each val in dt
+						div(draggable=val.quantity_in_stock>0?"true":"false" ondragstart="drag(event)" id=val.product_name)
+							div.row
+								img.img(src='http://www.partechgss.com/'+val.product_img draggable="false")
+								div.column
+									div
+										p.name(id=val.product_name draggable="false")= val.product_name
+										if val.quantity_in_stock>0
+											p.stock(id=val.quantity_in_stock draggable="false") In Stock
+										else
+											p.stock(id=val.quantity_in_stock draggable="false") Out of Stock
+							div.price(id=val.unit_price draggable="false")= '$'+val.unit_price
+							p(id="quantity" hidden=true draggable="false")=val.quantity_in_stock
+			div.cart_list( draggable="false", id="cartParent")
+				div.cartTop(ondrop="drop(event)" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" draggable="false" id="cart")
+				div.cartBottom(draggable="false")
+					a.btn(onclick="saveLocal()" draggable="false" id="checkout") Checkout
+					table(draggable="false")
+						tr(draggable="false")
+							td.total(draggable="false") Cart Total:
+							td.price2(id="cartTotal" draggable="false") $0.00
